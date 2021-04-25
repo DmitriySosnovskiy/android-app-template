@@ -1,4 +1,4 @@
-package ru.dsosnovskiy.template
+package com.dsosnovskiy.template
 
 import org.junit.Test
 

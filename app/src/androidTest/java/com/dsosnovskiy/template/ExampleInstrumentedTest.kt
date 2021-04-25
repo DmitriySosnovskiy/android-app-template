@@ -1,4 +1,4 @@
-package ru.dsosnovskiy.template
+package com.dsosnovskiy.template
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
