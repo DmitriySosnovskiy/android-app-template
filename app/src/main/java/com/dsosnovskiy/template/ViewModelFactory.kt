@@ -16,7 +16,9 @@ class ViewModelFactory @Inject constructor(
 {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
 
-        val creator = viewModels[modelClass] ?: throw IllegalArgumentException("Unknown model class $modelClass")
+        val creator = viewModels[modelClass] ?: viewModels.entries.firstOrNull {
+            modelClass.isAssignableFrom(it.key)
+        }?.value ?: throw IllegalArgumentException("Unknown model class $modelClass")
 
         try {
             @Suppress("UNCHECKED_CAST")
