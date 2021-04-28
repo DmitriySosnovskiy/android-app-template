@@ -16,6 +16,10 @@ class ViewModelFactory @Inject constructor(
 {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
 
+        /**
+         * Checking isAssignableFrom allows us to find the descendant if there is no viewmodel class
+         * in viewModels map.
+         */
         val creator = viewModels[modelClass] ?: viewModels.entries.firstOrNull {
             modelClass.isAssignableFrom(it.key)
         }?.value ?: throw IllegalArgumentException("Unknown model class $modelClass")

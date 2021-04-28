@@ -18,5 +18,4 @@ abstract class BaseViewModel : ViewModel() {
     fun observeLoading(owner: LifecycleOwner, onChanged :(newState: Boolean) -> Unit) {
         isLoading.observe(owner, Observer(onChanged))
     }
-
 }
