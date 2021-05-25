@@ -8,7 +8,10 @@ import com.dsosnovskiy.template.di.component.DaggerAppComponent
 class App: Application() {
 
     val daggerAppComponent: AppComponent by lazy {
-        DaggerAppComponent.create()
+        DaggerAppComponent
+                .builder()
+                .application(this)
+                .build()
     }
 
     override fun onCreate() {
