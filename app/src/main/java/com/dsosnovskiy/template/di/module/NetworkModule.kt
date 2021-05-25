@@ -12,11 +12,11 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 @Module(includes = [JsonConverterModule::class])
-class NetworkModule {
+object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideApiService(moshi: Moshi): ApiService {
+    @JvmStatic fun provideApiService(moshi: Moshi): ApiService {
         val loggingInterceptor = HttpLoggingInterceptor().apply {
             level = HttpLoggingInterceptor.Level.BODY
         }

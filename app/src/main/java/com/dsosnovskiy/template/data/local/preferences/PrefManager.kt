@@ -4,8 +4,7 @@ import android.content.SharedPreferences
 import javax.inject.Inject
 import javax.inject.Singleton
 
-@Singleton
-class PrefManager @Inject constructor(
+class PrefManager constructor(
     internal val preferences: SharedPreferences
 ) {
 

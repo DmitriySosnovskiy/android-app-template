@@ -5,10 +5,9 @@ import com.dsosnovskiy.template.data.remote.ApiService
 import javax.inject.Inject
 import javax.inject.Singleton
 
-@Singleton
-class RepositoryImpl @Inject constructor(
+class RepositoryImpl constructor(
     val api: ApiService,
-    val local: PrefManager
+    val prefs: PrefManager
 ) : IRepository {
 
 }
